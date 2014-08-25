@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html ng-app="ttt">
+	<head>
+		<meta charset="utf-8">
+
+		<title>An HTML Page</title>
+
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
+
+        <script src="js/main.js"></script>
+	</head>
+
+	<body>
+
+	<main ng-controller="tttCtrl">
+		<div class='grid' ng-class="{'x':cell == 'true'}" ng-repeat="cell in board track by $index" ng-click="cell='true'">
+			
+
+		</div>
+		<img class="x" src = "images/sub_zero.jpg">
+		<img class="y" src = "images/scorpion.jpg">
+	</main>
+
+	</body>
+</html>
+
+
+
+
+<!-- 
+	wire framing
+
+1. Front page 
+
+Welcome to Tic Tac Fatality! (mortal combat background: http://hqwide.com/wallpapers/l/1440x900/73/video_games_dark_gothic_mortal_kombat_background_1440x900_72125.jpg)
+
+	pick your side Scorpion or sub zero. 
+	two buttons. 
+		(subzero button pic  http://pichost.me/1574671/)  
+
+		(subzero and scorpion) you can use http://pichost.me/1640811/
+
+		Distingushing between player 1 and player 2
+		Who goes first?
+		
+2. Actual Game Page 
+
+Design CSS the layout grid of the chart 9 divs
+
+
+game logic.
+	make the icon show up whenever the area is clicked. use ng-class
+	a) once clicked the icon shows up (use ng-class within the button structure, or <img ng-source= like the kitty example but you have to list out the img links within your)
+	b) alternating show up for the two icons  
+
+
+	(set up a first variable called first mover. if the count of x and y are equal then its the first mover's turn else, its latter mover's turn )
+
+	need to set up a counter for both of the variable. 
+
+
+var counterCount = functionn(input) {
+	
+	for (i = 0; i < board.length; i++) {
+	var counterFirst = 0;
+	var counterSecond = 0;
+
+	if (board[i] == 'x') {
+	counterFirst++;
+	} else if (board[i] == 'y'){
+	counterSecond++;
+	};
+};
+
+	console.log(counterFirst);
+	console.log(counterSecond);
+
+	}
+
+First will always be first mover.
+Second will always be latter mover.
+
+whoever was clicked during the selection screen will be set to x.
+whoever was not clicked will be set to y. 
+
+
+if (counterFirst == counterSecond) {
+	console.log("its first mover's turn")}   
+else {
+
+console.log("its second mover's turn")} 
+
+
+}
+
+
+SET UP FUNCTION TO FIGURE OUT WHICH IMAGE GETS displayed first then sub in. followed by alternating function that we did. 
+
+
+
+
+
+
+
+	c) once clicked cannot be clicked again
+
+
+
+
+winning logic
+	a) when the three connects its a win. Map out all the possible wins
+
+	possible win combination 
+
+	if 
+
+	(	board[0] == 'x' && board[1] == 'x' && board[2] == 'x'
+		board[3] == 'x' && board[4] == 'x' && board[5] == 'x'
+		board[6] == 'x' && board[7] == 'x' && board[8] == 'x'
+		board[0] == 'x' && board[3] == 'x' && board[6] == 'x'
+		board[1] == 'x' && board[4] == 'x' && board[7] == 'x'
+		board[2] == 'x' && board[5] == 'x' && board[8] == 'x'
+		board[2] == 'x' && board[4] == 'x' && board[6] == 'x'
+		board[0] == 'x' && board[4] == 'x' && board[8] == 'x'
+
+		board[0] == 'y' && board[1] == 'y' && board[2] = 'y'
+		board[3] == 'y' && board[4] == 'y' && board[5] = 'y'
+		board[6] == 'y' && board[7] == 'y' && board[8] = 'y'
+		board[0] == 'y' && board[3] == 'y' && board[6] = 'y'
+		board[1] == 'y' && board[4] == 'y' && board[7] = 'y'
+		board[2] == 'y' && board[5] == 'y' && board[8] = 'y'
+		board[2] == 'y' && board[4] == 'y' && board[6] = 'y'
+		board[0] == 'y' && board[4] == 'y' && board[8] = 'y' ) {
+
+		}
+
+
+
+Announcement Page 
+	a) Declare winner
+	b) automatically plays the video on youtube if subzero wins
+	c) automatically plays the video if scorpion wins
+	d) Reset button to play again. Go to character selection.
+
+
+
+--> 

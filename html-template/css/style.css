@@ -1,0 +1,44 @@
+body {
+
+	background: url("../images/background.jpg"),center;
+	
+}
+
+.grid{
+	background-color: rgba(255,255,255, 0.3);
+	width: 150px;
+	height: 150px;
+	border: solid 2px;
+	float:left;
+
+}
+
+main{
+	width: 500px;
+	margin: 0 auto;
+}
+
+.x {
+	height:140px;
+	width:140px;
+	border-radius:50%;
+	border-style:solid;
+	border-width:2px;
+	border-color:white;
+	position: relative;
+	top:4px;
+	left: 5px;
+
+}
+
+.y {
+	height:140px;
+	width:140px;
+	border-radius:50%;
+	border-style:solid;
+	border-width:2px;
+	border-color:white;
+	position: relative;
+	top:4px;
+	left: 5px;
+}
